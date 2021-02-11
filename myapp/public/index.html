@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>test</h2>
+    <button onclick="getData()">get request</button>
+    <button onclick="getPostData()">post request</button>
+    <button onclick="getPrData()">Pr request</button>
+    <script>
+      async function getData() {
+        console.log("get test");
+        const data = await axios.get("http://localhost:3000/api");
+        console.log(data.data);
+      }
+      async function getPostData() {
+        console.log("post test");
+        const data = await axios.post("http://localhost:3000/api");
+        console.log(data.data);
+      }
+      async function getPrData() {
+        console.log("Pr test");
+        const data = await axios.post("http://localhost:3222/api");
+        console.log(data.data);
+      }
+    </script>
+  </body>
+</html>
